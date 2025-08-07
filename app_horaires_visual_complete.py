@@ -384,11 +384,11 @@ with tab2:
                 try:
                     # VOTRE CODE DE GÉNÉRATION COMPLET ICI
                     # --- ÉTAPE 1 & 2 : CHARGEMENT ET PRÉPARATION DES DONNÉES ---
-                    df_chevaux = pd.read_csv(file_chevaux, sep=';')
-                    df_competences = pd.read_csv(file_competences, sep=';')
-                    df_cours_manege = pd.read_csv(file_cours_manege, sep=';')
-                    df_cours_autres = pd.read_csv(file_cours_autres, sep=';')
-                    df_amis = pd.read_csv(file_amis, sep=';')
+                    df_chevaux = pd.read_csv(file_chevaux, sep=';', engine='python')
+                    df_competences = pd.read_csv(file_competences, sep=';', engine='python')
+                    df_cours_manege = pd.read_csv(file_cours_manege, sep=';', engine='python')
+                    df_cours_autres = pd.read_csv(file_cours_autres, sep=';', engine='python')
+                    df_amis = pd.read_csv(file_amis, sep=';', engine='python')
                     
                     df_chevaux['Nom_Cheval'] = df_chevaux['Nom_Cheval'].str.strip()
                     df_competences['Nom_Cheval'] = df_competences['Nom_Cheval'].str.strip()
@@ -949,4 +949,5 @@ st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
     🐴 Planificateur d'Horaires Équestres v2.0 | Interface visuelle améliorée
 </div>
+
 """, unsafe_allow_html=True)
