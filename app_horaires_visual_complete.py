@@ -910,7 +910,7 @@ with tab4:
             st.subheader("📊 Export Excel")
             if st.button("Générer le fichier Excel", use_container_width=True):
                 output = BytesIO()
-                with pd.ExcelWriter(output, engine='openpyxl') as writer:
+                with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                     # Feuille 1: Horaires complets
                     all_data = []
                     for cheval in sorted(st.session_state.schedule.keys()):
@@ -951,4 +951,5 @@ st.markdown("""
 </div>
 
 """, unsafe_allow_html=True)
+
 
